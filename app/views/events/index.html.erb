@@ -1,0 +1,20 @@
+<h1>All Events <span>
+ Create new
+</span></h1>
+
+
+
+<table>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.name %></td>
+        <td><%=event.description%></td>
+        <td><%=event.dateofevent%></td>
+        <td><%=event.location%></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
