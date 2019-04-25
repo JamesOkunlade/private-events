@@ -1,0 +1,30 @@
+<%= form_for(@event) do |f| %>
+    <% if @event.errors.any? %>
+    <div id="error_explanation">
+        <div class="alert alert-danger">
+        The form contains <%= pluralize(@event.errors.count, "error") %>.
+        </div>
+        <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+  
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  
+    <%= f.label :dateofevent %>
+    <%= f.text_field :dateofevent, class: 'form-control' %>
+  
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
+  
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>
+  

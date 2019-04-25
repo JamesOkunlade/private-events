@@ -11,8 +11,8 @@ class EventsController < ApplicationController
 
     def create 
         @event = current_user.events.build(event_params)
-        if @micropost.save
-            flash[:success] = "Micropost created!"
+        if @event.save
+            flash[:success] = "Event created!"
             redirect_to root_url
         else
             render 'new'
