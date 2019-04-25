@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12">
     <section class="user_info">
       <h1>
         <%= @user.name %>
@@ -7,38 +7,25 @@
       
       <% if @user.events.any? %>
         <h3>My Events (<%= @user.events.count %>)</h3>
-        <ol class="events">
+        <div class="events">
             <% @user.events.each do |event| %>
-            <li>
-                <span class="event"><%= link_to event.creator.name, event.creator %></span>
-                <span class="name"><%= event.name %></span>
+            <div class="event">
+                <span class="name"><%= link_to event.name, event_path %></span>
                 <span class="description"><%= event.description %></span>
-                <span class="dateofevent"><%= event.dateofevent %></span>
-                <span class="location"><%= event.location %></span>
+                <span class="dateofevent">Date: <%= event.dateofevent %></span>
+                <span class="location">Location: <%= event.location %></span>
 
 
                 <span class="timestamp">
                     Posted <%= time_ago_in_words(event.created_at) %> ago.
                 </span>
-            </li>
+            </div>
             <% end %>
-        </ol>
+        </div>
       <% end %>
       
     </section>
   </aside>
 </div>
-
-
-<% @events.each do |event| %>
-    <tr>
-      <td><%= link_to event.name %></td>
-      <td><%=event.description%></td>
-      <td><%=event.dateofevent%></td>
-      <td><%=event.location%></td>
-
-
-    </tr>
-  <% end %>
 
 

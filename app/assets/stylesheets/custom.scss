@@ -206,3 +206,32 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+
+/* Post */ 
+
+.events {
+  width: 100%;
+
+  
+  .event {
+    width: 100%;
+    background: #f1f1f1;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+
+    .name {
+      font-size: 30px;
+
+    }
+    .description {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+    .timestamp {
+      margin: 10px 0;
+    }
+  }
+}
