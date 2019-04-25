@@ -7,7 +7,8 @@
   <div class="events">
       <% @events.each do |event| %>
       <div class="event">
-          <span class="name"><%= event.name%></span>
+          <span class="name"><%= link_to event.name%></span>
+          <span><%= event.creator.name %></span>
           <span class="description"><%= event.description %></span>
           <span class="dateofevent">Date: <%= event.dateofevent %></span>
           <span class="location">Location: <%= event.location %></span>
